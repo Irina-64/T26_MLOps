@@ -1,0 +1,48 @@
+# --- Локальное окружение ---
+.venv/
+venv/
+env/
+.python-env/
+
+# --- Секреты (в Git только .env.example без значений) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# --- Python-кэши и сборка ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Данные, модели, артефакты экспериментов (политика данных — ЛР2) ---
+data/*
+!data/README.md
+models/
+artifacts/
+mlruns/
+mlartifacts/
+*.pkl
+*.joblib
+*.onnx
+*.parquet
+*.csv
+
+# --- Ноутбуки и IDE ---
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
+
+# --- ОС ---
+.DS_Store
+Thumbs.db
