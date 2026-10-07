@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|
 | Саргсян Айк | [@haiksarg](https://github.com/haiksarg) | Release lead, Repository administrator | План ЛР1 и issues, связи issue–PR, правила `main`, шаблоны issue и PR, tag `lr1-v1` | [#1](https://github.com/haiksarg/T26_MLOps/issues/1) | `chore/issue-1-repo-governance` |
 | Ильин Андрей | [@icy07](https://github.com/icy07) | Environment engineer, Quality engineer | Версия Python, проверенные команды установки и запуска в README, чистая установка, CI (Ruff, pytest) | [#2](https://github.com/haiksarg/T26_MLOps/issues/2) | `adreyil` |
-| Шереметов Мурат | `@<логин уточняется>` | Documentation and risk reviewer | ADR 0001, CONTRIBUTING, CODEOWNERS, проверка рисков | [#3](https://github.com/haiksarg/T26_MLOps/issues/3) | `mourberg` |
+| Шереметов Мурат | [@Sheremgato](https://github.com/Sheremgato) | Documentation and risk reviewer | ADR 0001, CONTRIBUTING, CODEOWNERS, проверка рисков | [#3](https://github.com/haiksarg/T26_MLOps/issues/3) | `mourberg` |
 
 ## Как изменения попадают в `main`
 
