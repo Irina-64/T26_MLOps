@@ -1,0 +1,13 @@
+# Замените заполнители @TODO-... реальными GitHub-логинами участников.
+# Формат: <шаблон пути> <владелец>
+
+*                        @TODO-release-lead
+/.github/                @TODO-repo-admin
+/CODEOWNERS              @TODO-repo-admin
+/README.md               @TODO-env-engineer
+/.python-version         @TODO-env-engineer
+/pyproject.toml          @TODO-env-engineer
+/.github/workflows/      @TODO-quality-engineer
+/tests/                  @TODO-quality-engineer
+/docs/adr/               @TODO-docs-reviewer
+/CONTRIBUTING.md         @TODO-docs-reviewer
