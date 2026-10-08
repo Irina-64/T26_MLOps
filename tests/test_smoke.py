@@ -1,4 +1,5 @@
 import sys
+
 from mlops_project import __version__, hello
 
 
@@ -11,5 +12,5 @@ def test_version_is_set():
 
 
 def test_python_version():
-    """Проверка версии Python для изолированного окружения (Quality engineer)."""
+    """Проверка версии Python окружения."""
     assert sys.version_info >= (3, 10)
