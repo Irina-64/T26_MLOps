@@ -1,6 +1,6 @@
 # Настройки репозитория
 
-Автор: Кучер Антон, kucheranton200, роль: Repository administrator
+Автор: Кучер Антон, @kucheranton200, роль: Repository administrator
 Issue: #1
 
 ## Включённые возможности
@@ -11,10 +11,10 @@ Issue: #1
 ## Участники (collaborators)
 | GitHub login | Роль в ЛР1 | Права |
 |---|---|---|
-| @login1 | Release lead | Write |
-| @login2 | Environment engineer | Write |
+| @GlooshSl | Release lead | Write |
+| @kerty0 | Environment engineer | Write |
 | @Z0rko32 | Quality engineer | Write |
-| @login4 | Documentation and risk reviewer | Write |
+| @Vikabh | Documentation and risk reviewer | Write |
 
 ## Правила ветки main (ruleset `main-protection`)
 | Правило | Зачем |
