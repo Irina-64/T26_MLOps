@@ -28,8 +28,9 @@ cd T26_MLOps
 Windows PowerShell:
 
 ```powershell
-python -m venv .venv
+py -3.12 -m venv .venv
 .venv\Scripts\Activate.ps1
+python --version
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
@@ -37,8 +38,9 @@ python -m pip install -e ".[dev]"
 Linux или macOS:
 
 ```bash
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
+python --version
 python -m pip install --upgrade pip
 python -m pip install -e ".[dev]"
 ```
