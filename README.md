@@ -9,7 +9,7 @@
 - `tests/` — тесты pytest.
 - `data/` — локальные данные, в Git не коммитятся (см. `data/README.md`).
 - `docs/` — документация команды.
-- `.github/workflows/ci.yml` — CI: Ruff и pytest.
+- `.github/workflows/ci.yml` — CI: Ruff и pytest и smoke-запуск `python -m housing_price`.
 
 ## Требования
 
