@@ -3,7 +3,7 @@
 | Поле | Значение |
 |---|---|
 | Студент | Кучер Антон, Т26УПМО-Т.МО41, team-2, @kucheranton200 |
-<!-- | Контрольная версия |  Ссылка на tag `lr1-v1` и commit SHA  | -->
+| Контрольная версия |  TODO: Ссылка на tag `lr1-v1` и commit SHA  |
 | Роль | Repository administrator |
 | Задача | Issue #1 |
 | Личный артефакт | [PR #2](https://github.com/kucheranton200/T26_MLOps/pull/2): `docs/lr1/lr1-repo-settings.md`, `docs/evidence/lr1-main-ruleset.json`; [issue #1](https://github.com/kucheranton200/T26_MLOps/issues/1) |
