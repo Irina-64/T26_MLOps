@@ -59,7 +59,7 @@ Release lead: @GlooshSl
 | #2 docs: document repository settings and main ruleset | @kucheranton200 | #1 | требуется | влит |
 | #4 [Quality] Настройка проверок CI и smoke-тестов | @Z0rko32 | #3 | одобрен @Vikabh и @kucheranton200 | влит |
 | #5 docs: ADR-0001 project boundaries and risks | @Vikabh | #? | запрошен | открыт, нужна привязка к issue |
-| [Release] План ЛР1 | @GlooshSl | #6 | запрошен | в работе |
+| #8 [Release] План ЛР1 | @GlooshSl | #6 | запрошен | в работе |
 
 Таблица обновляется Release lead по мере появления новых pull request.
 
