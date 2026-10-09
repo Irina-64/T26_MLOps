@@ -1,0 +1,29 @@
+# Локальное окружение и кэши
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Секреты и локальная конфигурация (в Git хранится только .env.example)
+.env
+*.pem
+*.key
+
+# Данные и модели (политика данных будет уточнена в ЛР2)
+data/*
+!data/.gitkeep
+models/
+*.pkl
+*.joblib
+*.onnx
+
+# Редакторы и ОС
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

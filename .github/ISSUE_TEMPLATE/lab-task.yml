@@ -1,0 +1,44 @@
+name: Задача лабораторной работы
+description: Задача с наблюдаемым результатом и критериями приемки
+title: "[ЛР1] Кратко: что должно получиться"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Опишите задачу так, чтобы другой участник мог проверить результат без устных пояснений.
+  - type: dropdown
+    id: role
+    attributes:
+      label: Роль в ЛР
+      options:
+        - Release lead
+        - Repository administrator
+        - Environment engineer
+        - Quality engineer
+        - Documentation and risk reviewer
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Наблюдаемый результат
+      description: Какой файл, настройка или изменение появится в репозитории.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      description: Список проверяемых условий.
+      value: |
+        - [ ] 
+        - [ ] 
+    validations:
+      required: true
+  - type: textarea
+    id: verify
+    attributes:
+      label: Как проверить
+      description: Команды или ссылки, по которым reviewer подтвердит результат.
+    validations:
+      required: true
