@@ -14,8 +14,8 @@
 Клонирование:
 
 ```bash
-git clone https://github.com/<OWNER>/<REPOSITORY>.git
-cd <REPOSITORY>
+git clone https://github.com/kucheranton200/T26_MLOps.git
+cd T26_MLOps
 ```
 
 Windows PowerShell:
@@ -64,5 +64,3 @@ tests/          тесты
 ## Как работать с репозиторием
 
 Правила веток, commit, pull request и review: [CONTRIBUTING.md](CONTRIBUTING.md).
-
-<!-- TODO (Environment engineer): пройти все команды на чистой машине и поправить README, если что-то не работает -->
