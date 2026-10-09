@@ -9,13 +9,13 @@ Release lead: @GlooshSl
 
 | Роль / задача | Ответственный | Issue | Срок |
 |---|---|---|---|
-| Release lead: план ЛР1 (этот файл) | @GlooshSl | #6 | 11.10 |
+| Release lead: план ЛР1 (этот файл) | @GlooshSl | #6 | выполнено (PR #8) |
 | Repository administrator: доступ, правила main | @kucheranton200 | #1 | выполнено (PR #2) |
 | Quality engineer: Ruff, pytest, CI | @Z0rko32 | #3 | выполнено (PR #4) |
-| Documentation and risk reviewer: доработка ADR 0001 | @Vikabh | #? | 12.10 |
-| Documentation and risk reviewer: CONTRIBUTING, CODEOWNERS | @Vikabh | #? | 13.10 |
+| Documentation and risk reviewer: доработка ADR 0001 | @Vikabh | #7 | выполнено (PR #5) |
+| Documentation and risk reviewer: CONTRIBUTING, CODEOWNERS | @Vikabh | #7 | выполнено (PR #10) |
 | Environment engineer: Python 3.12, установка, README | @kerty0 | #? | 13.10 |
-| Строки своих ролей в docs/team-roles.md | каждый свою | #? | 12.10 |
+| Строки своих ролей в docs/team-roles.md | каждый свою | #1 | 12.10 |
 | Evidence card каждого участника | каждый свою | #? | 14.10 |
 | Проверка установки по README на чистой машине | участник, не автор README | #? | 15.10 |
 | Контрольная точка lr1-v1 (tag и Release) | @GlooshSl | #? | 16.10, после всех merge |
@@ -40,11 +40,11 @@ Release lead: @GlooshSl
 
 | Роль / задача | Ответственный | Issue | Срок |
 |---|---|---|---|
-| Release lead: план ЛР1 (этот файл) | @GlooshSl | #6 | 11.10 |
+| Release lead: план ЛР1 (этот файл) | @GlooshSl | #6 | выполнено (PR #8) |
 | Repository administrator: доступ, правила main, шаблоны issue и PR | @kucheranton200 | #1 | выполнено (PR #2) |
 | Quality engineer: Ruff, pytest, CI | @Z0rko32 | #3 | выполнено (PR #4) |
-| Documentation and risk reviewer: доработка ADR 0001 | @Vikabh | #? | 12.10 |
-| Documentation and risk reviewer: CONTRIBUTING, CODEOWNERS | @Vikabh | #? | 13.10 |
+| Documentation and risk reviewer: доработка ADR 0001 | @Vikabh | #7 | выполнено (PR #5) |
+| Documentation and risk reviewer: CONTRIBUTING, CODEOWNERS | @Vikabh | #7 | выполнено (PR #10) |
 | Environment engineer: Python 3.12, установка, README | @kerty0 | #? | 13.10 |
 | Строки своих ролей в docs/team-roles.md | каждый свою | #? | 12.10 |
 | Evidence card каждого участника | каждый свою | #? | 14.10 |
