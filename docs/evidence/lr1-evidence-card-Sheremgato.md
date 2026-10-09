@@ -1,5 +1,3 @@
-# Evidence card ЛР1 — шаблон
-
 # Evidence card ЛР1 — @Sheremgato
 
 | Поле | Значение |
