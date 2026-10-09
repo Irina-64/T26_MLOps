@@ -1,0 +1,10 @@
+*                        @GlooshSl
+/.github/                @kucheranton200
+/CODEOWNERS              @kucheranton200
+/README.md               @kerty0
+/.python-version         @kerty0
+/pyproject.toml          @kerty0
+/.github/workflows/      @Z0rko32
+/tests/                  @Z0rko32
+/docs/adr/               @Vikabh
+/CONTRIBUTING.md         @Vikabh
