@@ -1,0 +1,65 @@
+name: Задача лабораторной работы
+description: Задача с наблюдаемым результатом и критериями приемки
+title: "ЛР1: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Одна issue — один проверяемый результат одного участника.
+        Не вставляйте сюда токены, пароли, содержимое `.env` и персональные данные.
+  - type: input
+    id: lab
+    attributes:
+      label: Лабораторная работа
+      placeholder: ЛР1
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Роль исполнителя
+      options:
+        - Release lead
+        - Repository administrator
+        - Environment engineer
+        - Quality engineer
+        - Documentation and risk reviewer
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст
+      description: Зачем нужна задача и на что она опирается.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Наблюдаемый результат
+      description: Что появится в репозитории или на GitHub после выполнения (файл, правило, workflow run).
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приемки
+      description: Проверяемые пункты в виде чек-листа.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Способ проверки
+      description: Команды или ссылки, по которым reviewer проверит результат.
+      render: bash
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Безопасность
+      options:
+        - label: В изменении не будет секретов, `.env`, `.venv`, кэшей, моделей и данных
+          required: true

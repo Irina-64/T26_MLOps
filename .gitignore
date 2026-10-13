@@ -1,0 +1,61 @@
+# --- Локальное окружение ---
+.venv/
+venv/
+env/
+.python-env/
+
+# --- Секреты (в Git только .env.example без значений) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# --- Python-кэши и сборка ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Данные, модели, артефакты экспериментов (политика данных: data/README.md) ---
+# В Git только описание, контракт, разрешенный учебный образец и .dvc-файлы.
+# Шаблоны «*.*», а не «*»: иначе DVC считает игнорируемой саму папку и не находит в ней .dvc-файлы.
+data/*.*
+!data/README.md
+!data/contract.json
+# Полный набор под DVC: в Git только .dvc-файл с контрольной суммой, сам файл — нет
+data/raw/*.*
+!data/raw/*.dvc
+# Результаты стадий DVC-пайплайна воспроизводятся командой dvc repro
+data/processed/
+data/split/
+# Отчеты валидации воспроизводятся командой из README и сохраняются как артефакт CI
+reports/
+models/
+artifacts/
+mlruns/
+mlartifacts/
+*.pkl
+*.joblib
+*.onnx
+*.parquet
+*.csv
+# Разрешенный учебный образец — после *.csv, иначе это правило его перекроет
+!data/housing_sample.csv
+
+# --- Ноутбуки и IDE ---
+.ipynb_checkpoints/
+.idea/
+.vscode/
+*.swp
+
+# --- ОС ---
+.DS_Store
+Thumbs.db
