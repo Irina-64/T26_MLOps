@@ -5,8 +5,8 @@
 - Шереметов Мурат Олегович, группа Т26УПМО-Т.МО41, команда №4, GitHub @Sheremgato.
 - Роль ЛР4: план эксперимента и варианты моделей. В ЛР3 отвечал за стадию split.
 - Задача: [issue #32](https://github.com/haiksarg/T26_MLOps/issues/32).
-- PR: ветка `feat/issue-32-models-adr` в `haiksarg/mourberg`;
-  [страница сравнения](https://github.com/haiksarg/T26_MLOps/compare/mourberg...Sheremgato:T26_MLOps:feat/issue-32-models-adr).
+- Pull request: [PR #35](https://github.com/haiksarg/T26_MLOps/pull/35)
+  из `feat/issue-32-models-adr` в `haiksarg/mourberg`.
 
 ## Личный проверяемый вклад
 
@@ -22,11 +22,10 @@
    commit [`83f6155`](https://github.com/Sheremgato/T26_MLOps/commit/83f615549f27e3a7c61560195d1d2b4be3f1bf51):
    проверяются классы, настройки леса и совпадение предсказаний после загрузки
    трех видов pipeline с явным списком доверенных типов.
-4. Проверена часть Айка в [PR #34](https://github.com/haiksarg/T26_MLOps/pull/34):
+4. Опубликовано [review PR #34](https://github.com/haiksarg/T26_MLOps/pull/34#pullrequestreview-5685127822)
+   с проверкой части Айка:
    в `load_validated_data` обучение отклоняется при `passed=false` и несовпадении SHA-256.
    `python -m pytest -q tests/test_train.py -k load_validated_data` — 3 passed.
-   Содержательный комментарий подготовлен, но еще не опубликован;
-   прямую ссылку на review нужно добавить после отправки.
 
 ## MLflow run
 
@@ -90,3 +89,8 @@ Baseline MAE для этого разбиения — 88227.46608527131 USD.
 индексов дерева. Список задан явно, автоматического разрешения всех обнаруженных типов
 и перехода на pickle нет. Тесты сохранения/загрузки контролируют этот результат.
 Предобработка обучается только на train, а TARGET не входит в FEATURES.
+
+## Использование ИИ
+
+ИИ-помощник использовался при подготовке ADR, кода моделей и тестов. Результаты
+проверены тестами pytest, Ruff, DVC и загрузкой моделей из MLflow.
