@@ -32,3 +32,9 @@ Thumbs.db
 .dvc/cache/
 .dvc/tmp/
 .dvc/config.local
+
+# MLflow (ЛР4)
+mlflow.db
+mlruns/
+mlartifacts/
+students/reports/run.json
