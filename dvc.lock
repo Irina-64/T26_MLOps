@@ -147,16 +147,16 @@ stages:
           - 6.0
           - .inf
         train:
-          model: median_baseline
+          model: random_forest
           seed: 42
           rf_n_estimators: 100
           rf_max_depth: 12
     outs:
     - path: models/model.joblib
       hash: md5
-      md5: 97133d22c1193a7f3b18995e0d91508c
-      size: 5018
+      md5: ab549f278ff0780cea9623542048f9cc
+      size: 22796643
     - path: reports/train_metrics.json
       hash: md5
-      md5: d5443ab26d9216bc82dfbd6d73005a73
-      size: 162
+      md5: 87854292b5192c44db10f46bc1bbbe1f
+      size: 176
