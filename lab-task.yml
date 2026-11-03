@@ -1,0 +1,36 @@
+name: Lab task
+description: Задача лабораторной работы
+title: "[LR1] "
+labels: ["lab-task"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Цель
+      description: Что необходимо сделать?
+      placeholder: Опишите ожидаемый результат
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: План выполнения
+      description: Основные шаги
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Критерии приёмки
+      description: Как проверить, что задача выполнена?
+    validations:
+      required: true
+  - type: dropdown
+    id: owner
+    attributes:
+      label: Ответственный
+      options:
+        - neazsot
+        - papikyn
+    validations:
+      required: true
