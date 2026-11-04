@@ -1,4 +1,4 @@
-# Evidence card ЛР4 — шаблон
+# Evidence card ЛР4 — @icy07
 
 ## Идентификация
 
