@@ -22,7 +22,7 @@ preprocess:
 # Стадия train и эксперимент ЛР4 (ADR 0002). Фактор эксперимента — model, меняется только здесь.
 # seed задает разбиение train/test и случайность модели; run в MLflow называется "<model>-seed<seed>".
 train:
-  model: median_baseline
+  model: random_forest
   seed: 42
   rf_n_estimators: 100
   rf_max_depth: 12
