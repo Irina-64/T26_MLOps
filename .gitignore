@@ -1,0 +1,40 @@
+# Локальное окружение и кэши
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Секреты и локальная конфигурация (в Git хранится только .env.example)
+.env
+*.pem
+*.key
+
+# Данные и модели (политика данных будет уточнена в ЛР2)
+data/raw/
+data/processed/
+models/
+*.pkl
+*.joblib
+*.onnx
+
+# Редакторы и ОС
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# DVC
+.dvc/cache/
+.dvc/tmp/
+.dvc/config.local
+
+# MLflow (ЛР4)
+mlflow.db
+mlruns/
+mlartifacts/
+students/reports/run.json
