@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import json
 import os
+import pickle
 import subprocess
 import sys
 from pathlib import Path
@@ -35,6 +36,12 @@ METRICS_PATH = Path("reports/train_metrics.json")
 RUN_PATH = Path("reports/run.json")
 DEFAULT_TRACKING_URI = "sqlite:///mlflow.db"
 DEFAULT_EXPERIMENT = "housing-price"
+BUNDLE_FORMAT_VERSION = 1
+BUNDLE_KEYS = ("format_version", "model", "features", "target", "train", "split", "metrics", "data")
+
+
+class BundleError(ValueError):
+    """Файл модели поврежден или не соответствует формату bundle."""
 
 
 def file_sha256(path: Path) -> str:
@@ -84,6 +91,53 @@ def train_and_evaluate(
         "test_rows": len(test_df),
     }
     return model, metrics, test_df[FEATURES].head(5)
+
+
+def build_bundle(
+    model: Pipeline,
+    params: dict[str, Any],
+    metrics: dict[str, float],
+    versions: dict[str, str],
+) -> dict[str, Any]:
+    """Собрать файл модели: сам pipeline и все, что нужно для его проверки и использования."""
+    split_params = params["split"]
+    return {
+        "format_version": BUNDLE_FORMAT_VERSION,
+        "model": model,
+        "features": list(FEATURES),
+        "target": TARGET,
+        "train": dict(params["train"]),
+        "split": {
+            "seed": params["train"]["seed"],
+            "test_size": split_params["test_size"],
+            "stratify_column": split_params["stratify_column"],
+            "train_rows": metrics["train_rows"],
+            "test_rows": metrics["test_rows"],
+        },
+        "metrics": dict(metrics),
+        "data": dict(versions),
+    }
+
+
+def load_bundle(path: Path) -> dict[str, Any]:
+    """Загрузить bundle; поврежденный или чужой файл дает BundleError, а не сбой при predict.
+
+    joblib выполняет код при загрузке, поэтому функция только для собственных артефактов проекта.
+    """
+    try:
+        bundle = joblib.load(path)
+    except (OSError, EOFError, KeyError, IndexError, ValueError, pickle.UnpicklingError) as exc:
+        raise BundleError(f"не удалось загрузить модель {path}: {exc}") from exc
+    if not isinstance(bundle, dict):
+        raise BundleError(f"{path}: ожидался bundle-словарь, получен {type(bundle).__name__}")
+    missing = [key for key in BUNDLE_KEYS if key not in bundle]
+    if missing:
+        raise BundleError(f"{path}: в bundle нет полей: {', '.join(missing)}")
+    if bundle["format_version"] != BUNDLE_FORMAT_VERSION:
+        raise BundleError(
+            f"{path}: формат {bundle['format_version']}, ожидался {BUNDLE_FORMAT_VERSION}"
+        )
+    return bundle
 
 
 def _git(args: list[str]) -> str:
@@ -179,7 +233,7 @@ def main(argv: list[str] | None = None) -> int:
 
     model, metrics, example = train_and_evaluate(df, params)
     MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
-    joblib.dump(model, MODEL_PATH)
+    joblib.dump(build_bundle(model, params, metrics, versions), MODEL_PATH)
     METRICS_PATH.parent.mkdir(parents=True, exist_ok=True)
     METRICS_PATH.write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8", newline="\n")
 
