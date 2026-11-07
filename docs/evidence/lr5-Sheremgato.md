@@ -5,7 +5,7 @@
 | Студент | Шереметов Мурат Олегович, Т26УПМО-Т.МО41, команда №4, GitHub: @Sheremgato |
 | Роль | Evaluation test engineer: предусловия и проверка метрик. В ЛР4 — ADR 0002 и варианты моделей; в ЛР5 — отказы на некорректных входах и тесты этих отказов. |
 | Задача | [Issue #42: предусловия метрик и отказ при постоянной цели](https://github.com/haiksarg/T26_MLOps/issues/42) |
-| Личный артефакт | `tests/evaluation/test_metric_preconditions.py` — 33 тестовых случая; `src/housing_price/metrics.py::evaluate_regression`; подключение функции в `train_and_evaluate`. Коммит кода и тестов: `aa8603f`. |
+| Личный артефакт | `tests/evaluation/test_metric_preconditions.py` — 33 тестовых случая; `src/housing_price/metrics.py::evaluate_regression`; подключение функции в `train_and_evaluate`. Коммит кода и тестов: `aa8603f`. Работа и карточка — в [PR #45](https://github.com/haiksarg/T26_MLOps/pull/45). |
 | Контролируемый риск | Расчет метрик на пустых данных, разной длине, NaN или бесконечности; деление на ноль при расчете `mae_skill`, когда цель test совпадает с медианой train. |
 | Defect injection | Временно удалена проверка `baseline_mae == 0`. Заранее выбранный `tests/evaluation/test_metric_preconditions.py::test_evaluate_regression_rejects_constant_target[perfect]` фактически упал. Дефект удален и не закоммичен. |
 | Диагностика | Вместо ожидаемого `ValueError` получен `ZeroDivisionError: float division by zero` в выражении `1 - model_mae / baseline_mae`. Фрагмент traceback приведен ниже. |
@@ -67,4 +67,4 @@ src/housing_price/metrics.py:46: ZeroDivisionError
 
 Замечание к проверенному коммиту: в diff только `tests/model/test_bundle.py`, а `docs/evidence/lr5-icy07.md`, заявленной в описании PR, еще нет. До merge нужно добавить карточку в этот же PR.
 
-Текст содержательного review подготовлен. На GitHub оно пока не опубликовано; после ручной отправки сюда нужно добавить ссылку на опубликованное review коммитом в тот же PR.
+Опубликовано [review PR #44](https://github.com/haiksarg/T26_MLOps/pull/44#pullrequestreview-5812439909), включая [комментарий к строке 102](https://github.com/haiksarg/T26_MLOps/pull/44#discussion_r4501895894) о независимой фиксации порядка признаков. Review отправлено как **Approve**, с замечанием о необходимости добавить карточку Андрея до merge.
