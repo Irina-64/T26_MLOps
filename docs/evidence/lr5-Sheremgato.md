@@ -10,7 +10,7 @@
 | Defect injection | Временно удалена проверка `baseline_mae == 0`. Заранее выбранный `tests/evaluation/test_metric_preconditions.py::test_evaluate_regression_rejects_constant_target[perfect]` фактически упал. Дефект удален и не закоммичен. |
 | Диагностика | Вместо ожидаемого `ValueError` получен `ZeroDivisionError: float division by zero` в выражении `1 - model_mae / baseline_mae`. Фрагмент traceback приведен ниже. |
 | Воспроизведение | Один тест: `python -m pytest -q 'tests/evaluation/test_metric_preconditions.py::test_evaluate_regression_rejects_constant_target[perfect]'`. Весь набор: `python -m pytest -q --junitxml=reports/tests/lr5-pass.xml`. |
-| Использование ИИ | ИИ-помощник использовался при подготовке кода, тестов и карточки. Результаты проверены pytest, Ruff и запуском DVC. |
+| Использование ИИ | ИИ-помощник: код и тесты; проверка — pytest, Ruff, DVC. |
 
 ## Что проверяют тесты
 
@@ -57,4 +57,14 @@ src/housing_price/metrics.py:46: ZeroDivisionError
 
 ## Проверка коллеги
 
-Ожидается PR Андрея (@icy07) по [issue #41](https://github.com/haiksarg/T26_MLOps/issues/41). На момент подготовки карточки участник еще не опубликовал работу ЛР5, поэтому review не проводилось. После появления PR нужно проверить diff, запустить его тесты и добавить сюда ссылку на содержательное опубликованное review коммитом в тот же PR.
+Проверен [PR #44 Андрея (@icy07)](https://github.com/haiksarg/T26_MLOps/pull/44) по [issue #41](https://github.com/haiksarg/T26_MLOps/issues/41), коммит `56dfea270f9425efcdc5748533b7cd1224bee114`. Его код и тесты проверялись в отдельной копии, без изменения своей рабочей ветки.
+
+- `python -m pytest -q tests/model/test_bundle.py` — **34 passed**.
+- `python -m pytest -q` — **138 passed**, одно прежнее предупреждение MLflow/SQLAlchemy.
+- `python -m ruff check .` — **All checks passed!**
+
+Проверены состав и версии bundle, независимая фиксация порядка признаков, отказы загрузки, предсказания после сохранения и повторяемость леса при одном seed. Сравнение с `PINNED_FEATURES` обнаружит перестановку даже при одновременном изменении `FEATURES` и порядка в bundle.
+
+Замечание к проверенному коммиту: в diff только `tests/model/test_bundle.py`, а `docs/evidence/lr5-icy07.md`, заявленной в описании PR, еще нет. До merge нужно добавить карточку в этот же PR.
+
+Текст содержательного review подготовлен. На GitHub оно пока не опубликовано; после ручной отправки сюда нужно добавить ссылку на опубликованное review коммитом в тот же PR.
