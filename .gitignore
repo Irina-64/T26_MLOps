@@ -1,0 +1,40 @@
+# Локальное окружение
+.venv/
+venv/
+env/
+
+# Секреты
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Кэши
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Редакторы и ОС
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Данные и артефакты экспериментов
+data/*.csv
+data/*.parquet
+data/raw/
+data/processed/
+models/
+mlruns/
+mlartifacts/
+mlflow.db
+*.joblib
+*.pkl
+reports/*
+!reports/experiments/
