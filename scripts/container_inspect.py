@@ -8,6 +8,7 @@
 
 import argparse
 import json
+import shlex
 import subprocess
 import sys
 from pathlib import Path
@@ -18,7 +19,7 @@ INSPECT_FORMAT = (
 )
 LIST_APP = (
     "import json; from pathlib import Path; "
-    "print(json.dumps(sorted(p.name for p in Path('/app').iterdir())))"
+    'print(json.dumps(sorted(p.name for p in Path("/app").iterdir())))'
 )
 # В runtime не должно быть ничего, кроме приложения и модели (раздел 14 задания).
 FORBIDDEN_IN_APP = {
@@ -79,22 +80,19 @@ def main(argv: list[str] | None = None) -> int:
     app_entries = json.loads(listing)
     problems = check_image(config, revision, app_entries, commit)
 
-    def shown(cmd: list[str]) -> str:
-        return " ".join(f"'{part}'" if " " in part or "{" in part else part for part in cmd)
-
     lines = [
         "# ЛР6: отчет inspect, получен командой",
         f"# python scripts/container_inspect.py --image {image} --output {args.output.as_posix()}",
         f"commit: {commit}",
         f"image: {image}",
         "",
-        f"$ {shown(summary_cmd)}",
+        f"$ {shlex.join(summary_cmd)}",
         summary,
         "",
-        f"$ {shown(revision_cmd)}",
+        f"$ {shlex.join(revision_cmd)}",
         revision,
         "",
-        f"$ {shown(list_cmd)}",
+        f"$ {shlex.join(list_cmd)}",
         listing,
         "",
         "result: " + ("OK" if not problems else "FAIL"),
